@@ -1,42 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page-container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	font-family: "Roboto", serif;
+	font-style: normal;
+	display: flex;
+	justify-content: space-between;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hero-section {
+	background-image: url("./assets/new-year-bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 10vh;
 }
 
 .card {
-  padding: 2em;
+	padding: 2em;
 }
 
 .read-the-docs {
-  color: #888;
+	color: #888;
+}
+
+.wishes-card {
+	background-color: white;
+
+	border-radius: 1rem;
+	width: 50vw;
+}
+
+.wish-input {
+	width: 50%;
+	background-color: white;
+	border: none;
+	font-size: 2rem;
+	color: black;
+}
+
+.wish-input:focus {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+.task-description-input {
+	font-size: 1rem;
+	color: gray;
+	background-color: white;
+	border: none;
+	/* padding: 0 1rem; */
+	width: 40%;
+	border-radius: 0.25rem;
+}
+
+.task-description-input:focus {
+	outline: none;
+}
+
+.wish-container {
+	color: #fa5555;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.wish-row {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+	position: relative;
+}
+
+.wish-entry {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 2rem;
+	flex: 1;
+}
+
+.wish-list {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	width: "100%";
+}
+
+.wish-list-footer {
+	display: flex;
+	justify-content: space-between;
+	color: gray;
+	margin-top: 2rem;
+}
+
+.statuses {
+	display: flex;
+	gap: 1rem;
+}
+
+.status:hover {
+	cursor: pointer;
+}
+
+.selected-status {
+	color: rgb(221, 66, 66);
+}
+
+.bought-wish {
+	text-decoration: line-through;
+}
+
+.task-description {
+	color: gray;
+	font-size: 1rem;
+}
+
+.task-title-container {
+	display: flex;
+	align-items: center;
+}
+
+.options-menu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 2rem;
+}
+
+.options-menu span {
+	font-weight: bold;
+	border-bottom: 1px solid gray;
+	font-size: 14px;
+}
+
+.new-task-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.list-by-guest {
+	color: black;
+}
+
+.list-by-guest .item {
+	background-color: #f2f2f2;
+	border-bottom: 1px solid gray;
+	cursor: pointer;
+}
+
+.list-by-guest .item:hover {
+	background-color: rgb(248, 164, 164);
+}
+
+.list-by-guest .selected-item {
+	background-color: rgb(244, 103, 103);
 }
