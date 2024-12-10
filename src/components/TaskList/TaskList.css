@@ -1,11 +1,11 @@
-.wish-row {
+.task-row {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid gray;
 	position: relative;
 }
 
-.wish-entry {
+.task-entry {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -13,14 +13,14 @@
 	flex: 1;
 }
 
-.wish-list {
+.task-list {
 	display: flex;
 	gap: 1rem;
 	flex-direction: column;
 	width: "100%";
 }
 
-.bought-wish {
+.bought-task {
 	text-decoration: line-through;
 }
 

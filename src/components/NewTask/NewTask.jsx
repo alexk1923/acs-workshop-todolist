@@ -33,9 +33,8 @@ function NewTask({ addNewTask }) {
 				type='text'
 				onChange={(e) => {
 					setNewTask(e.target.value);
-					console.log(e.target.value);
 				}}
-				className='wish-input'
+				className='task-input'
 				value={newTask}
 			/>
 
@@ -43,7 +42,6 @@ function NewTask({ addNewTask }) {
 				placeholder='Description...'
 				onChange={(e) => {
 					setNewDescription(e.target.value);
-					console.log(e.target.value);
 				}}
 				className='task-description-input'
 				value={newDescription}

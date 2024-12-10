@@ -5,14 +5,12 @@ import api from "../../api/api";
 
 function ListFooter({
 	filteredTasks,
-	setFilteredTasks,
 	currentStatus,
-	setCurrentStatus,
 	filterTasks,
-	handleRemoveBoughtWishes,
+	handleRemoveBoughtTasks,
 }) {
 	return (
-		<div className='wish-list-footer'>
+		<div className='task-list-footer'>
 			<span>{filteredTasks?.length} items left</span>
 			<div className='statuses'>
 				<span
@@ -45,7 +43,7 @@ function ListFooter({
 				</span>
 			</div>
 
-			<span onClick={handleRemoveBoughtWishes} style={{ cursor: "pointer" }}>
+			<span onClick={handleRemoveBoughtTasks} style={{ cursor: "pointer" }}>
 				Clear bought ones
 			</span>
 		</div>

@@ -2,7 +2,7 @@
 	color: rgb(221, 66, 66);
 }
 
-.wish-list-footer {
+.task-list-footer {
 	display: flex;
 	justify-content: space-between;
 	color: gray;

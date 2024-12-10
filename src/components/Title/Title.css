@@ -1,0 +1,11 @@
+.title-section {
+	background: rgb(147, 9, 9);
+	background: linear-gradient(
+		90deg,
+		rgba(147, 9, 9, 1) 0%,
+		rgba(250, 85, 85, 1) 35%,
+		rgba(237, 92, 92, 1) 100%
+	);
+	width: 100vw;
+	height: 15vh;
+}

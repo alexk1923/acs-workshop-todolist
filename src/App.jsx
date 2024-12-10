@@ -12,6 +12,7 @@ import NewTask from "./components/NewTask/NewTask";
 import GuestList from "./components/GuestList/GuestList";
 import ListFooter from "./components/ListFooter/ListFooter";
 import { STATUS } from "./constants/constants";
+import Title from "./components/Title/Title";
 
 function App() {
 	const [tasks, setTasks] = useState([]);
@@ -21,9 +22,8 @@ function App() {
 	const [currentStatus, setCurrentStatus] = useState(STATUS.ALL);
 
 	const getAllTasks = async () => {
-		console.log("Se face cerere sa se preia toate task urile iar");
-
 		const fetchedTasks = await api.getTasks();
+
 		setTasks(fetchedTasks);
 		setFilteredTasks(fetchedTasks);
 		setInitialTasks(fetchedTasks);
@@ -47,7 +47,6 @@ function App() {
 	};
 
 	useEffect(() => {
-		console.log("");
 		filterTasks(currentStatus);
 	}, [tasks]);
 
@@ -82,15 +81,13 @@ function App() {
 	};
 
 	const handleMarkTask = async (id) => {
-		const newWish = tasks.find((w) => w.id == id);
-		console.log("The new wish is:");
-		console.log(newWish);
+		const newTask = tasks.find((w) => w.id == id);
 
-		if (newWish) {
+		if (newTask) {
 			await api.updateTask(id, {
-				...newWish,
+				...newTask,
 				status:
-					newWish.status === STATUS.BOUGHT ? STATUS.PENDING : STATUS.BOUGHT,
+					newTask.status === STATUS.BOUGHT ? STATUS.PENDING : STATUS.BOUGHT,
 			});
 		}
 
@@ -120,7 +117,7 @@ function App() {
 		);
 	}, [currentAssignee]);
 
-	const handleRemoveBoughtWishes = async () => {
+	const handleRemoveBoughtTasks = async () => {
 		const listToBeRemoved = [];
 
 		for (const task of filteredTasks) {
@@ -138,13 +135,11 @@ function App() {
 
 	return (
 		<>
-			<div className='hero-section'>
-				<h1 style={{ padding: "2rem" }}>New Year List</h1>
-			</div>
+			<Title />
 			<div className='page-container'>
 				<div>
 					<NewTask addNewTask={addNewTask} />
-					<div className='wishes-card'>
+					<div className='tasks-card'>
 						<TaskList
 							listOfTasks={filteredTasks}
 							handleMarkTask={handleMarkTask}
@@ -156,7 +151,7 @@ function App() {
 							filterTasks={filterTasks}
 							currentStatus={currentStatus}
 							setCurrentStatus={setCurrentStatus}
-							handleRemoveBoughtWishes={handleRemoveBoughtWishes}
+							handleRemoveBoughtTasks={handleRemoveBoughtTasks}
 						/>
 					</div>
 				</div>

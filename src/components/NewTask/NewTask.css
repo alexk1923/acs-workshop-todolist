@@ -1,4 +1,4 @@
-.wish-input {
+.task-input {
 	width: 50%;
 	background-color: white;
 	border: none;
@@ -6,7 +6,7 @@
 	color: black;
 }
 
-.wish-input:focus {
+.task-input:focus {
 	outline: none;
 	border: none;
 	border-bottom: 1px solid gray;

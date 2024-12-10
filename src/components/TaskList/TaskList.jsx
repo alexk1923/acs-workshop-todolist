@@ -11,12 +11,12 @@ function TaskList({ listOfTasks, handleMarkTask, handleRemoveTask }) {
 	return (
 		<div>
 			{
-				<div className='wish-list'>
+				<div className='task-list'>
 					{listOfTasks?.map(
 						({ id, title, status, description, guest, dueDate }) => (
-							<div className='wish-row'>
-								<div className='wish-entry'>
-									<div className='wish-container' key={id}>
+							<div className='task-row'>
+								<div className='task-entry'>
+									<div className='task-container' key={id}>
 										<div className='task-title-container'>
 											<div
 												onClick={() => handleMarkTask(id)}
@@ -34,7 +34,7 @@ function TaskList({ listOfTasks, handleMarkTask, handleRemoveTask }) {
 											</div>
 											<span
 												className={
-													status === STATUS.BOUGHT ? "bought-wish" : ""
+													status === STATUS.BOUGHT ? "bought-task" : ""
 												}
 											>
 												{title}
