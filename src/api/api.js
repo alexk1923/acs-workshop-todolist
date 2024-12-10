@@ -2,14 +2,9 @@ import { API_URL } from "./config";
 
 async function getGuests() {
 	try {
-		const response = await fetch(`${API_URL}/guests`);
-		if (!response.ok) throw new Error("Failed to fetch GUESTS");
-
-		const data = await response.json();
-		console.log("Guests:", data);
-		return data;
+		// @TODO: Complete guest request
 	} catch (error) {
-		console.error("Error fetching guests:", error);
+		// Log error
 	}
 }
 
@@ -56,21 +51,7 @@ async function getTasks() {
 
 async function createTask(task) {
 	try {
-		const response = await fetch(`${API_URL}/tasks`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(task),
-		});
-
-		if (!response.ok) {
-			throw new Error("Failed to add task");
-		}
-
-		const data = await response.json();
-		console.log("New Task:", data);
-		return data;
+		// @TODO: Implement a POST Request
 	} catch (error) {
 		console.error("Error adding task:", error);
 	}
@@ -78,9 +59,7 @@ async function createTask(task) {
 
 async function deleteTask(taskId) {
 	try {
-		const response = await fetch(`${API_URL}/tasks/${taskId}`, {
-			method: "DELETE",
-		});
+		// @TODO: Implement a DELETE Request
 		if (!response.ok) throw new Error("Failed to delete TASK");
 
 		return;

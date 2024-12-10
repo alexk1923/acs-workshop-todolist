@@ -1,10 +1,6 @@
 import React from "react";
 import "./TaskList.css";
 import { STATUS } from "../../constants/constants";
-import {
-	MdOutlineCheckBox,
-	MdOutlineCheckBoxOutlineBlank,
-} from "react-icons/md";
 import trashIcon from "../../assets/trash.png";
 
 function TaskList({ listOfTasks, handleMarkTask, handleRemoveTask }) {
@@ -26,11 +22,7 @@ function TaskList({ listOfTasks, handleMarkTask, handleRemoveTask }) {
 													aspectRatio: 1 / 1,
 												}}
 											>
-												{status === STATUS.BOUGHT ? (
-													<MdOutlineCheckBox />
-												) : (
-													<MdOutlineCheckBoxOutlineBlank />
-												)}
+												{/* @TODO: Conditional render the checkbox */}
 											</div>
 											<span
 												className={
@@ -42,11 +34,11 @@ function TaskList({ listOfTasks, handleMarkTask, handleRemoveTask }) {
 										</div>
 
 										<span className='task-description'>
-											Assigned to {guest.firstName} {guest.lastName}
+											{/* @TODO: Display the guest / assignee */}
 										</span>
 
 										<span className='task-description'>
-											Due to {new Date(dueDate).toLocaleDateString()}
+											{/* @TODO: Display the due date */}
 										</span>
 										<span className='task-description'>{description}</span>
 									</div>

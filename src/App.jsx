@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 
-import giftIcon from "./assets/giftbox.png";
-import {
-	MdOutlineCheckBox,
-	MdOutlineCheckBoxOutlineBlank,
-} from "react-icons/md";
 import "./App.css";
 import api from "./api/api";
 import TaskList from "./components/TaskList/TaskList";
@@ -23,7 +18,6 @@ function App() {
 
 	const getAllTasks = async () => {
 		const fetchedTasks = await api.getTasks();
-
 		setTasks(fetchedTasks);
 		setFilteredTasks(fetchedTasks);
 		setInitialTasks(fetchedTasks);
@@ -39,11 +33,13 @@ function App() {
 
 	const filterTasks = (status) => {
 		setCurrentStatus(status);
+
 		if (status === STATUS.ALL) {
 			setFilteredTasks(tasks);
 			return;
 		}
-		setFilteredTasks(tasks?.filter((w) => w.status === status));
+
+		// @TODO: Set new filtered tasks based on current status
 	};
 
 	useEffect(() => {
@@ -51,7 +47,7 @@ function App() {
 	}, [tasks]);
 
 	const handleRemoveTask = async (id) => {
-		await api.deleteTask(id);
+		// @TODO: Call the delete API
 		getAllTasks();
 	};
 
@@ -84,11 +80,8 @@ function App() {
 		const newTask = tasks.find((w) => w.id == id);
 
 		if (newTask) {
-			await api.updateTask(id, {
-				...newTask,
-				status:
-					newTask.status === STATUS.BOUGHT ? STATUS.PENDING : STATUS.BOUGHT,
-			});
+			// @TODO: Create an update task payload, setting the status based on the current one,
+			// if current is PENDING, set it to BOUGHT and otherwise
 		}
 
 		getAllTasks();
@@ -120,15 +113,7 @@ function App() {
 	const handleRemoveBoughtTasks = async () => {
 		const listToBeRemoved = [];
 
-		for (const task of filteredTasks) {
-			if (task.status === STATUS.BOUGHT) {
-				listToBeRemoved.push(task);
-			}
-		}
-
-		for (const task of listToBeRemoved) {
-			await api.deleteTask(task.id);
-		}
+		// @TODO: Get the list of tasks to be removed from filtered tasks
 
 		getAllTasks();
 	};

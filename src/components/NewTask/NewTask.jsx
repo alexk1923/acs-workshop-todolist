@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "./NewTask.css";
-import api from "../../api/api";
 
 function NewTask({ addNewTask }) {
 	const [newTask, setNewTask] = useState("");
@@ -18,8 +17,7 @@ function NewTask({ addNewTask }) {
 		setNewDueDate(null);
 	};
 	const getAllGuests = async () => {
-		const fetchedGuests = await api.getGuests();
-		setGuests(fetchedGuests);
+		// @TODO Call the api and set state variable
 	};
 
 	useEffect(() => {

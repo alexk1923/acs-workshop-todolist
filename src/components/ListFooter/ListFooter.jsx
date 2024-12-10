@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ListFooter.css";
 import { STATUS } from "../../constants/constants";
-import api from "../../api/api";
 
 function ListFooter({
 	filteredTasks,
@@ -21,26 +20,7 @@ function ListFooter({
 				>
 					All
 				</span>
-				<span
-					onClick={() => filterTasks(STATUS.PENDING)}
-					className={
-						currentStatus === STATUS.PENDING
-							? "status selected-status"
-							: "status"
-					}
-				>
-					Pending
-				</span>
-				<span
-					onClick={() => filterTasks(STATUS.BOUGHT)}
-					className={
-						currentStatus === STATUS.BOUGHT
-							? " status selected-status"
-							: "status"
-					}
-				>
-					Bought
-				</span>
+				{/* @TODO: The same as the above for STATUS.PENDING and STATUS.BOUGHT */}
 			</div>
 
 			<span onClick={handleRemoveBoughtTasks} style={{ cursor: "pointer" }}>
