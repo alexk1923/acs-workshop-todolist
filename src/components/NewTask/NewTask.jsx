@@ -5,24 +5,30 @@ import "./NewTask.css";
 function NewTask({ addNewTask }) {
 	const [newTask, setNewTask] = useState("");
 	const [newDescription, setNewDescription] = useState("");
-	const [newAssignee, setNewAssignee] = useState("All");
+	const [newAssignee, setNewAssignee] = useState(-1);
 	const [newDueDate, setNewDueDate] = useState(new Date());
 	const [guests, setGuests] = useState([]);
+
+	useEffect(() => {
+		getAllGuests();
+	}, []);
+
+	useEffect(() => {
+		if (guests.length > 0) {
+			setNewAssignee(guests[0].id);
+		}
+	}, [guests]);
 
 	const handleAddNewTask = () => {
 		addNewTask(newTask, newDescription, newAssignee, newDueDate);
 		setNewTask("");
 		setNewDescription("");
-		setNewAssignee("All");
+		setNewAssignee(guests[0].id);
 		setNewDueDate(null);
 	};
 	const getAllGuests = async () => {
 		// @TODO Call the api and set state variable
 	};
-
-	useEffect(() => {
-		getAllGuests();
-	}, []);
 
 	return (
 		<div className='new-task-container'>
