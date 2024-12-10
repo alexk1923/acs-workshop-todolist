@@ -52,7 +52,6 @@ function App() {
 	}, [tasks]);
 
 	const handleRemoveTask = async (id) => {
-		// setWishes(wishes.filter((w) => w.id !== id));
 		await api.deleteTask(id);
 		getAllTasks();
 	};
@@ -121,6 +120,22 @@ function App() {
 		);
 	}, [currentAssignee]);
 
+	const handleRemoveBoughtWishes = async () => {
+		const listToBeRemoved = [];
+
+		for (const task of filteredTasks) {
+			if (task.status === STATUS.BOUGHT) {
+				listToBeRemoved.push(task);
+			}
+		}
+
+		for (const task of listToBeRemoved) {
+			await api.deleteTask(task.id);
+		}
+
+		getAllTasks();
+	};
+
 	return (
 		<>
 			<div className='hero-section'>
@@ -141,6 +156,7 @@ function App() {
 							filterTasks={filterTasks}
 							currentStatus={currentStatus}
 							setCurrentStatus={setCurrentStatus}
+							handleRemoveBoughtWishes={handleRemoveBoughtWishes}
 						/>
 					</div>
 				</div>

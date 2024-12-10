@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ListFooter.css";
 import { STATUS } from "../../constants/constants";
+import api from "../../api/api";
 
 function ListFooter({
 	filteredTasks,
@@ -8,11 +9,8 @@ function ListFooter({
 	currentStatus,
 	setCurrentStatus,
 	filterTasks,
+	handleRemoveBoughtWishes,
 }) {
-	const handleRemoveBoughtWishes = () => {
-		setTasks(tasks?.filter((w) => w.status !== STATUS.BOUGHT));
-	};
-
 	return (
 		<div className='wish-list-footer'>
 			<span>{filteredTasks?.length} items left</span>
@@ -47,7 +45,9 @@ function ListFooter({
 				</span>
 			</div>
 
-			<span onClick={handleRemoveBoughtWishes}>Clear bought ones</span>
+			<span onClick={handleRemoveBoughtWishes} style={{ cursor: "pointer" }}>
+				Clear bought ones
+			</span>
 		</div>
 	);
 }
