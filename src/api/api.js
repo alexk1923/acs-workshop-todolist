@@ -12,7 +12,7 @@ async function updateTask(taskId, updatedTask) {
 	try {
 		console.log("Updating task...");
 
-		const response = await fetch(`${API_URL}/tasks/${taskId}`, {
+		const response = await fetch(`${API_URL}/task/${taskId}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
@@ -32,7 +32,7 @@ async function updateTask(taskId, updatedTask) {
 
 async function getTasks() {
 	try {
-		const response = await fetch(`${API_URL}/tasks`, {
+		const response = await fetch(`${API_URL}/task`, {
 			method: "GET",
 		});
 		if (!response.ok) {
