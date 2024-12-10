@@ -1,0 +1,35 @@
+.wish-row {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+	position: relative;
+}
+
+.wish-entry {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 2rem;
+	flex: 1;
+}
+
+.wish-list {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	width: "100%";
+}
+
+.bought-wish {
+	text-decoration: line-through;
+}
+
+.task-description {
+	color: gray;
+	font-size: 1rem;
+}
+
+.task-title-container {
+	display: flex;
+	align-items: center;
+}

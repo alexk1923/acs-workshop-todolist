@@ -1,0 +1,19 @@
+.selected-status {
+	color: rgb(221, 66, 66);
+}
+
+.wish-list-footer {
+	display: flex;
+	justify-content: space-between;
+	color: gray;
+	margin-top: 2rem;
+}
+
+.statuses {
+	display: flex;
+	gap: 1rem;
+}
+
+.status:hover {
+	cursor: pointer;
+}

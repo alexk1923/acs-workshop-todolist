@@ -14,12 +14,15 @@
 }
 
 .hero-section {
-	background-image: url("./assets/new-year-bg.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: rgb(147, 9, 9);
+	background: linear-gradient(
+		90deg,
+		rgba(147, 9, 9, 1) 0%,
+		rgba(250, 85, 85, 1) 35%,
+		rgba(237, 92, 92, 1) 100%
+	);
 	width: 100vw;
-	height: 10vh;
+	height: 15vh;
 }
 
 .card {
@@ -37,131 +40,9 @@
 	width: 50vw;
 }
 
-.wish-input {
-	width: 50%;
-	background-color: white;
-	border: none;
-	font-size: 2rem;
-	color: black;
-}
-
-.wish-input:focus {
-	outline: none;
-	border: none;
-	border-bottom: 1px solid gray;
-}
-
-.task-description-input {
-	font-size: 1rem;
-	color: gray;
-	background-color: white;
-	border: none;
-	/* padding: 0 1rem; */
-	width: 40%;
-	border-radius: 0.25rem;
-}
-
-.task-description-input:focus {
-	outline: none;
-}
-
 .wish-container {
 	color: #fa5555;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-}
-
-.wish-row {
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 1px solid gray;
-	position: relative;
-}
-
-.wish-entry {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	font-size: 2rem;
-	flex: 1;
-}
-
-.wish-list {
-	display: flex;
-	gap: 1rem;
-	flex-direction: column;
-	width: "100%";
-}
-
-.wish-list-footer {
-	display: flex;
-	justify-content: space-between;
-	color: gray;
-	margin-top: 2rem;
-}
-
-.statuses {
-	display: flex;
-	gap: 1rem;
-}
-
-.status:hover {
-	cursor: pointer;
-}
-
-.selected-status {
-	color: rgb(221, 66, 66);
-}
-
-.bought-wish {
-	text-decoration: line-through;
-}
-
-.task-description {
-	color: gray;
-	font-size: 1rem;
-}
-
-.task-title-container {
-	display: flex;
-	align-items: center;
-}
-
-.options-menu {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	right: 2rem;
-}
-
-.options-menu span {
-	font-weight: bold;
-	border-bottom: 1px solid gray;
-	font-size: 14px;
-}
-
-.new-task-container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 0.5rem;
-}
-
-.list-by-guest {
-	color: black;
-}
-
-.list-by-guest .item {
-	background-color: #f2f2f2;
-	border-bottom: 1px solid gray;
-	cursor: pointer;
-}
-
-.list-by-guest .item:hover {
-	background-color: rgb(248, 164, 164);
-}
-
-.list-by-guest .selected-item {
-	background-color: rgb(244, 103, 103);
 }

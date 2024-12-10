@@ -1,0 +1,42 @@
+.wish-input {
+	width: 50%;
+	background-color: white;
+	border: none;
+	font-size: 2rem;
+	color: black;
+}
+
+.wish-input:focus {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+.task-description-input {
+	font-size: 1rem;
+	color: gray;
+	background-color: white;
+	border: none;
+	/* padding: 0 1rem; */
+	width: 40%;
+	border-radius: 0.25rem;
+}
+
+.task-description-input:focus {
+	outline: none;
+}
+
+.new-task-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.new-task-input {
+	background-color: #fa5555;
+	outline: none;
+	border: none;
+	padding: 4px;
+}
