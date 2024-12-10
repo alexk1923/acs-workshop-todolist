@@ -18,7 +18,7 @@ function GuestList({ currentAssignee, handleSelectListByGuest }) {
 	return (
 		<div className='list-by-guest'>
 			<h2>View specific list</h2>
-			{guests.map((guest) => (
+			{guests?.map((guest) => (
 				<div
 					className={
 						currentAssignee === guest.id ? "item selected-item" : "item"

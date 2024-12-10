@@ -58,7 +58,7 @@ function NewTask({ addNewTask }) {
 					onChange={(e) => setNewAssignee(e.target.value)}
 					className='new-task-input'
 				>
-					{guests.map((guest) => (
+					{guests?.map((guest) => (
 						<option value={guest.id}>
 							{guest.firstName} {guest.lastName}
 						</option>
